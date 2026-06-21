@@ -1,0 +1,12 @@
+{
+  "name": "RetroPlay — Free Retro Arcade",
+  "short_name": "RetroPlay",
+  "description": "9 classic arcade games, points, cheats, achievements, and a daily spin wheel — 100% free, no installs, no ads.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#4B5BF6",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

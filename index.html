@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RetroPlay — Free Retro Arcade, Real Rewards</title>
+<meta name="description" content="Play 9 classic arcade games free in your browser. Earn points, unlock cheats, climb the leaderboard, collect achievements — no installs, no ads." />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="manifest.json" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/games.css" />
+</head>
+<body>
+
+<!-- ====================================================================
+     MARKETING LANDING PAGE — kept close to the original light/modern
+     design (per the brief). Hidden once the player signs in and the
+     dark arcade app (#app-root) takes over.
+     ==================================================================== -->
+<div id="marketing-root">
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo"><span class="mark">🕹️</span> retroplay</div>
+      <div class="nav-links">
+        <a href="#games">Games <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <a href="#how">How it works <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <a href="#rewards">Rewards</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-right">
+        <a class="btn btn-ghost" href="#" id="nav-login">Login</a>
+        <a class="btn btn-primary" href="#" id="nav-signup">Sign up</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot">🎉</span> New: Daily Spin Wheel is live</div>
+      <h1>Free retro games.<br><span class="accent">Real points.</span> Zero catch.</h1>
+      <p class="lede">Play 9 classic arcade games in your browser, earn points from every session, and spend them unlocking cheats — God Mode, Fly Mode, and more. No ads. No subscriptions. Forever free.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary btn-lg" id="cta-play-now">▶ Play now, it's free</a>
+        <a href="#how" class="btn btn-ghost btn-lg">See how it works</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><b>9</b><span>arcade games</span></div>
+        <div class="stat-box"><b>9</b><span>unlockable cheats</span></div>
+        <div class="stat-box"><b>$0</b><span>cost, ever</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <svg viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="230" cy="380" rx="170" ry="22" fill="#E4E8FF"/>
+        <path class="float-2" d="M120 60 C 200 10, 320 30, 370 110 C 420 190, 400 290, 320 340 C 240 390, 110 380, 70 300 C 30 220, 40 110, 120 60 Z" fill="#EEF2FF"/>
+        <g class="float-1">
+          <rect x="150" y="120" width="160" height="220" rx="18" fill="#4B5BF6"/>
+          <rect x="166" y="138" width="128" height="92" rx="10" fill="#161A2E"/>
+          <rect x="178" y="150" width="104" height="68" rx="6" fill="#7C8CFF"/>
+          <rect x="186" y="158" width="28" height="6" rx="3" fill="#FFB930"/>
+          <rect x="186" y="170" width="44" height="6" rx="3" fill="#fff" opacity=".8"/>
+          <rect x="186" y="182" width="36" height="6" rx="3" fill="#fff" opacity=".5"/>
+          <circle cx="190" cy="252" r="14" fill="#FFB930"/>
+          <circle cx="190" cy="252" r="5" fill="#3A2700"/>
+          <circle cx="240" cy="246" r="10" fill="#FF6FA8"/>
+          <circle cx="266" cy="246" r="10" fill="#1FAE6E"/>
+          <circle cx="240" cy="272" r="10" fill="#fff"/>
+          <circle cx="266" cy="272" r="10" fill="#fff"/>
+          <rect x="150" y="300" width="160" height="14" fill="#3A47D1"/>
+          <rect x="150" y="120" width="160" height="14" rx="7" fill="#3A47D1"/>
+        </g>
+        <g class="float-3">
+          <circle cx="370" cy="120" r="26" fill="#FFB930"/>
+          <text x="370" y="129" font-size="22" text-anchor="middle" font-family="sans-serif" font-weight="800" fill="#3A2700">★</text>
+        </g>
+        <g class="float-2">
+          <circle cx="90" cy="150" r="20" fill="#FF6FA8"/>
+          <text x="90" y="158" font-size="18" text-anchor="middle" font-family="sans-serif" fill="#fff">♥</text>
+        </g>
+        <g class="float-1">
+          <circle cx="85" cy="280" r="22" fill="#1FAE6E"/>
+          <text x="85" y="289" font-size="18" text-anchor="middle" font-family="sans-serif">🏆</text>
+        </g>
+        <text x="330" y="60" font-size="20">✨</text>
+        <text x="60" y="80" font-size="16">✦</text>
+        <text x="400" y="260" font-size="18">✦</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item"><span class="ico">🔒</span> No password required</div>
+    <div class="trust-item"><span class="ico">🚫</span> No ads, ever</div>
+    <div class="trust-item"><span class="ico">💸</span> No paywalls</div>
+    <div class="trust-item"><span class="ico">⚡</span> Instant browser play</div>
+    <div class="trust-item"><span class="ico">🎁</span> Daily free rewards</div>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">How it works</span>
+      <h2>From a player name to high score in under a minute</h2>
+      <p>RetroPlay runs entirely in your browser — pick a game, start earning points, spend them however you like.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Pick a name</h3>
+        <p>No email, no password, no forms — type a name (or play as Guest) and you're straight into the games.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Pick a game</h3>
+        <p>Choose from 9 browser-based classics. Keyboard or touch — works the same on desktop and mobile.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Earn points</h3>
+        <p>Get points from playing, daily logins, referrals, and the spin wheel — they add up fast.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Unlock cheats</h3>
+        <p>Spend points on permanent per-game upgrades like God Mode or Fly Mode. Yours to keep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="games-section" id="games">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The lineup</span>
+      <h2>9 classics, zero downloads</h2>
+      <p>Every game is built to run instantly in your browser tab — no installs, no plugins. Click any game to jump straight in.</p>
+    </div>
+    <div class="game-grid" id="landing-game-grid">
+      <div class="game-card" data-game="dino"><div class="game-emoji">🦕</div><div><h4>Chrome Dino</h4><p>Endless runner, jump the cacti</p></div></div>
+      <div class="game-card" data-game="snake"><div class="game-emoji">🐍</div><div><h4>Snake</h4><p>Classic grid, grow without crashing</p></div></div>
+      <div class="game-card" data-game="mario"><div class="game-emoji">🍄</div><div><h4>Mario Clone</h4><p>Side-scrolling platformer</p></div></div>
+      <div class="game-card" data-game="boss"><div class="game-emoji">👊</div><div><h4>Beat The Boss</h4><p>Weapon-based boss battles</p></div></div>
+      <div class="game-card" data-game="flappy"><div class="game-emoji">🐦</div><div><h4>Flappy Bird</h4><p>Tap to fly through the gaps</p></div></div>
+      <div class="game-card" data-game="pacman"><div class="game-emoji">👻</div><div><h4>Pac-Man Clone</h4><p>Eat dots, dodge ghosts</p></div></div>
+      <div class="game-card" data-game="breakout"><div class="game-emoji">🧱</div><div><h4>Breakout</h4><p>Bounce, break, clear the board</p></div></div>
+      <div class="game-card" data-game="tetris"><div class="game-emoji">🟦</div><div><h4>Tetris</h4><p>Stack the falling blocks</p></div></div>
+      <div class="game-card" data-game="invaders"><div class="game-emoji">👾</div><div><h4>Space Invaders</h4><p>Defend Earth from the swarm</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="rewards">
+  <div class="wrap">
+    <div class="feature-grid">
+      <div>
+        <span class="kicker">Cheat Store</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Points you earn, upgrades you keep</h2>
+        <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;">Every cheat is a one-time purchase that stays unlocked in this browser forever — toggle it on or off per session from the in-game cheat panel.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span> God Mode &amp; Infinite Jump for Dino and Mario</li>
+          <li><span class="check">✓</span> Fly Mode &amp; Infinite Lives across multiple games</li>
+          <li><span class="check">✓</span> Magnet Food &amp; Invincible for Snake</li>
+          <li><span class="check">✓</span> 9 cheats total, usable across all 9 games</li>
+        </ul>
+      </div>
+      <div class="feature-art">
+        <div class="mock-card">
+          <div class="mock-badge">2 owned</div>
+          <div class="mock-row owned"><span class="name">⚡ God Mode</span><span class="price">Owned</span></div>
+          <div class="mock-row owned"><span class="name">🦘 Infinite Jump</span><span class="price">Owned</span></div>
+          <div class="mock-row locked"><span class="name">🔒 Fly Mode</span><span class="price">700 pts</span></div>
+          <div class="mock-row locked"><span class="name">🔒 Double Speed</span><span class="price">200 pts</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="feature-grid reverse">
+      <div>
+        <span class="kicker">Stay motivated</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Leaderboards, achievements &amp; daily spins</h2>
+        <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;">Check the per-game and overall leaderboard, unlock badges for milestones, and spin the wheel once a day for a free points boost.</p>
+        <ul class="feature-list">
+          <li><span class="check">✓</span> Per-game and overall leaderboards</li>
+          <li><span class="check">✓</span> 16 achievements with bonus points</li>
+          <li><span class="check">✓</span> One free spin every 24 hours</li>
+        </ul>
+      </div>
+      <div class="feature-art">
+        <div class="mock-card">
+          <div class="mock-row owned"><span class="name">🥇 You</span><span class="price" style="color:var(--green);">12,480 pts</span></div>
+          <div class="mock-row locked"><span class="name">🥈 player_44</span><span class="price">10,120 pts</span></div>
+          <div class="mock-row locked"><span class="name">🥉 retrofan</span><span class="price">9,860 pts</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px;">
+  <div class="stats-banner">
+    <div class="wrap">
+      <h2>Built for players, not advertisers</h2>
+      <p>RetroPlay earns nothing from your attention — there's nothing to sell, so we never had to add ads.</p>
+      <div class="row">
+        <div><b>9</b><span>games, always free</span></div>
+        <div><b>9</b><span>unlockable cheats</span></div>
+        <div><b>$0</b><span>spent to play</span></div>
+        <div><b>24h</b><span>spin &amp; bonus cycle</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">FAQ</span>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>Is RetroPlay actually free?<span class="plus">+</span></summary>
+        <p>Yes — every game is free to play, forever. No subscription tiers, no ads, no paywalled levels. Points are earned through play and spent only on optional cheats.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to download anything?<span class="plus">+</span></summary>
+        <p>No. Every game runs directly in your browser tab using HTML5 — works on desktop and mobile, no installs or plugins required.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do referrals work?<span class="plus">+</span></summary>
+        <p>Share your unique referral code from the Rewards screen. When a friend enters it on their own RetroPlay, you both get a one-time bonus — since RetroPlay has no server, this works per-browser rather than per-account.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens to cheats I buy?<span class="plus">+</span></summary>
+        <p>They're permanently saved in this browser. Toggle any owned cheat on or off per session from the in-game cheat panel — no need to repurchase.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where is my progress saved?<span class="plus">+</span></summary>
+        <p>Everything — points, cheats, achievements, scores — is saved locally in this browser's storage. Use the Export Save option on your Profile page to back it up or move it to another browser.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Ready to set a high score?</h2>
+    <p>Pick a name, pick a game, and start earning points in the next 30 seconds.</p>
+    <a href="#" class="btn btn-gold btn-lg" id="cta-final">▶ Play RetroPlay free</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span class="mark" style="background:linear-gradient(135deg,#4B5BF6,#7C8CFF);width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;">🕹️</span> retroplay</div>
+        <p style="font-size:14px;line-height:1.6;max-width:260px;color:#7B81A0;">Free retro arcade gaming with real rewards. No ads, no paywalls — forever.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="#games">Games</a>
+        <a href="#rewards">Cheat Store</a>
+        <a href="#" id="nav-leaderboard-link">Leaderboard</a>
+        <a href="#how">How it works</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 RetroPlay. All rights reserved.</span>
+      <span>Made for players who just want to play.</span>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /#marketing-root -->
+
+<!-- ====================================================================
+     ARCADE APP — the actual game portal. Hidden until a player signs in,
+     then the SPA router (js/app.js) renders views here based on
+     location.hash (#/hub, #/game/<id>, #/cheats, #/leaderboard,
+     #/achievements, #/rewards, #/profile).
+     ==================================================================== -->
+<div id="app-root"></div>
+
+<!-- ==================== Scripts (dependency order matters) ==================== -->
+<script src="js/storage.js"></script>
+<script src="js/data.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/leaderboard.js"></script>
+<script src="js/cheats.js"></script>
+<script src="js/dailyspin.js"></script>
+<script src="games/snake.js"></script>
+<script src="games/dino.js"></script>
+<script src="games/flappy.js"></script>
+<script src="games/breakout.js"></script>
+<script src="games/tetris.js"></script>
+<script src="games/pacman.js"></script>
+<script src="games/mario.js"></script>
+<script src="games/invaders.js"></script>
+<script src="games/boss.js"></script>
+<script src="js/app.js"></script>
+<script>
+  // Wire the marketing "9 classics" showcase cards to jump straight into
+  // a game (the SPA router shows the auth modal first if needed).
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('#landing-game-grid .game-card[data-game]').forEach(function (card) {
+      card.addEventListener('click', function () {
+        if (window.RP && RP.Sound) RP.Sound.unlock();
+        window.location.hash = '#/game/' + card.getAttribute('data-game');
+      });
+    });
+    var lbLink = document.getElementById('nav-leaderboard-link');
+    if (lbLink) lbLink.addEventListener('click', function (e) { e.preventDefault(); window.location.hash = '#/leaderboard'; });
+  });
+</script>
+</body>
+</html>

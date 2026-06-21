@@ -1,0 +1,68 @@
+/* ==========================================================================
+   RetroPlay :: games.css
+   Everything specific to the actual gameplay screen: canvas scaling, the
+   on-screen touch controls, the HUD bar, the pre-game cheat-activation
+   chips, and the game-over overlay card.
+   ========================================================================== */
+
+.rp-player { padding-top: 20px; }
+.rp-player-head { margin-bottom: 18px; }
+.rp-back { display: inline-block; font-family: var(--mono); color: var(--arc-text-soft); font-size: 13px; margin-bottom: 10px; }
+.rp-back:hover { color: var(--arc-green); }
+.rp-player-head h1 { font-family: var(--mono); font-size: 22px; margin: 0 0 14px; }
+
+.rp-hud { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.rp-hud-stat { font-family: var(--mono); background: var(--arc-panel); border: 1px solid var(--arc-line); border-radius: 8px; padding: 8px 14px; font-size: 12.5px; color: var(--arc-text-soft); }
+.rp-hud-stat b { color: var(--gold); font-size: 14px; margin-left: 4px; }
+
+.rp-stage-col { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+/* Pre-game cheat activation bar */
+.rp-cheat-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; width: 100%; max-width: 720px; }
+.rp-cheat-bar-label { font-family: var(--mono); font-size: 12px; color: var(--arc-text-soft); margin-right: 4px; }
+.rp-cheat-chip { font-family: var(--mono); font-size: 12px; padding: 7px 12px; border-radius: 999px; border: 1.5px solid var(--arc-line); background: var(--arc-panel); color: var(--arc-text-soft); cursor: pointer; transition: border-color .15s, color .15s, background .15s; }
+.rp-cheat-chip:hover { border-color: var(--arc-text-soft); }
+.rp-cheat-chip.active { border-color: var(--arc-green); color: var(--arc-green); background: rgba(0,255,123,0.08); }
+.rp-blood-toggle { font-family: var(--mono); font-size: 12px; color: var(--arc-text-soft); display: flex; align-items: center; gap: 6px; margin-left: auto; }
+
+/* Canvas stage */
+.rp-stage { position: relative; width: 100%; max-width: 720px; display: flex; justify-content: center; background: #000; border: 1px solid var(--arc-line); border-radius: 12px; overflow: hidden; touch-action: none; }
+.rp-stage canvas { display: block; max-width: 100%; height: auto; image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; }
+
+.rp-instructions { font-family: var(--mono); font-size: 11.5px; color: var(--arc-text-soft); text-align: center; max-width: 720px; line-height: 1.6; }
+.rp-instructions b { color: var(--arc-text); }
+
+/* On-screen touch controls (overlaid on the canvas, shown for touch devices) */
+.rp-touchpad { position: absolute; inset: 0; pointer-events: none; display: none; }
+@media (hover: none) and (pointer: coarse) { .rp-touchpad { display: block; } }
+.rp-touchpad * { pointer-events: auto; }
+.rp-dpad { position: absolute; left: 14px; bottom: 14px; width: 132px; height: 132px; display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: repeat(3,1fr); gap: 4px; }
+.rp-dpad-btn { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 8px; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; user-select: none; -webkit-user-select: none; }
+.rp-dpad-btn:active, .rp-dpad-btn.active { background: rgba(0,255,123,0.35); }
+.rp-dpad-up { grid-column: 2; grid-row: 1; }
+.rp-dpad-left { grid-column: 1; grid-row: 2; }
+.rp-dpad-right { grid-column: 3; grid-row: 2; }
+.rp-dpad-down { grid-column: 2; grid-row: 3; }
+
+.rp-actions { position: absolute; right: 14px; bottom: 14px; display: flex; gap: 10px; flex-wrap: wrap-reverse; justify-content: flex-end; max-width: 180px; }
+.rp-action-btn { width: 58px; height: 58px; border-radius: 50%; background: rgba(255,185,48,0.25); border: 1.5px solid rgba(255,185,48,0.6); color: #fff; font-family: var(--mono); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; user-select: none; -webkit-user-select: none; text-transform: uppercase; }
+.rp-action-btn:active, .rp-action-btn.active { background: rgba(255,185,48,0.55); }
+
+/* Game-over overlay */
+.rp-overlay { position: absolute; inset: 0; background: rgba(5,5,10,.86); backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .3s ease; padding: 16px; z-index: 50; }
+.rp-overlay.show { opacity: 1; }
+.rp-overlay-card { background: var(--arc-panel); border: 1px solid var(--gold); border-radius: 16px; padding: 30px 28px; max-width: 360px; width: 100%; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+.rp-overlay-card h2 { font-family: var(--mono); margin: 0 0 14px; color: var(--gold); letter-spacing: 2px; }
+.rp-overlay-score { font-family: var(--mono); font-size: 30px; font-weight: 800; }
+.rp-overlay-score span { display: block; font-size: 11px; color: var(--arc-text-soft); font-weight: 400; }
+.rp-newbest { color: var(--arc-green); font-family: var(--mono); font-size: 13px; margin-top: 10px; }
+.rp-medal { font-family: var(--mono); font-size: 13px; color: var(--arc-text); margin-top: 8px; }
+.rp-overlay-points { font-family: var(--mono); font-size: 13px; color: var(--gold); margin-top: 12px; }
+.rp-overlay-ach { font-family: var(--mono); font-size: 12px; color: var(--arc-green); margin-top: 10px; line-height: 1.6; }
+.rp-overlay-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+
+@media (max-width: 540px) {
+  .rp-overlay-card { padding: 24px 18px; }
+  .rp-cheat-bar { justify-content: center; }
+  .rp-blood-toggle { margin-left: 0; }
+}

@@ -1,0 +1,121 @@
+[
+  {
+    "id": "godmode",
+    "name": "God Mode",
+    "emoji": "⚡",
+    "cost": 500,
+    "games": [
+      "dino",
+      "mario",
+      "boss",
+      "invaders",
+      "pacman"
+    ],
+    "desc": "Become immune to damage and hazards for the whole run."
+  },
+  {
+    "id": "flymode",
+    "name": "Fly Mode",
+    "emoji": "🪽",
+    "cost": 700,
+    "games": [
+      "mario",
+      "dino"
+    ],
+    "desc": "Hold jump to float freely instead of falling."
+  },
+  {
+    "id": "infinitejump",
+    "name": "Infinite Jump",
+    "emoji": "🦘",
+    "cost": 300,
+    "games": [
+      "mario",
+      "dino"
+    ],
+    "desc": "Jump again in mid-air, as many times as you want."
+  },
+  {
+    "id": "infinitelives",
+    "name": "Infinite Lives",
+    "emoji": "💗",
+    "cost": 400,
+    "games": [
+      "mario",
+      "pacman",
+      "breakout",
+      "invaders",
+      "boss"
+    ],
+    "desc": "Lives never run out — you simply respawn."
+  },
+  {
+    "id": "magnetfood",
+    "name": "Magnet Food",
+    "emoji": "🧲",
+    "cost": 250,
+    "games": [
+      "snake"
+    ],
+    "desc": "Nearby food drifts toward your snake automatically."
+  },
+  {
+    "id": "doublespeed",
+    "name": "Double Speed",
+    "emoji": "⏩",
+    "cost": 200,
+    "games": [
+      "snake",
+      "dino",
+      "flappy",
+      "breakout",
+      "invaders",
+      "tetris"
+    ],
+    "desc": "Everything moves twice as fast — for double the points."
+  },
+  {
+    "id": "invincible",
+    "name": "Invincible",
+    "emoji": "🛡️",
+    "cost": 350,
+    "games": [
+      "snake",
+      "breakout",
+      "flappy"
+    ],
+    "desc": "Pass through walls/obstacles without losing."
+  },
+  {
+    "id": "scoremultiplier",
+    "name": "Score x2",
+    "emoji": "✖️2",
+    "cost": 600,
+    "games": [
+      "snake",
+      "dino",
+      "flappy",
+      "mario",
+      "pacman",
+      "breakout",
+      "tetris",
+      "invaders",
+      "boss"
+    ],
+    "desc": "Every point you earn this run is doubled."
+  },
+  {
+    "id": "slowmo",
+    "name": "Slow-Mo",
+    "emoji": "🐢",
+    "cost": 300,
+    "games": [
+      "dino",
+      "flappy",
+      "breakout",
+      "invaders",
+      "pacman"
+    ],
+    "desc": "Obstacles and enemies move 30% slower."
+  }
+]
